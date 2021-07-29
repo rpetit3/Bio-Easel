@@ -57,9 +57,7 @@ BEGIN {
   $src_file = __FILE__;
   $src_file =~ s/\.pm/\.c/;
 
-  my $file = __FILE__;
-  ($easel_src_dir) = $file =~ /^(.*)\/blib/;
-  $easel_src_dir = File::Spec->catfile( $easel_src_dir, 'src/easel' );
+  $easel_src_dir = File::Spec->catfile( $ENV{BIO_EASEL_SHARE_DIR}, 'src/easel' );
 
   $typemaps = __FILE__;
   $typemaps =~ s/\.pm/\.typemap/;
